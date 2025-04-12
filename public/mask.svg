@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="black">
+  <path
+    d="M50 5
+       L61 35
+       L95 35
+       L67 57
+       L76 90
+       L50 70
+       L24 90
+       L33 57
+       L5 35
+       L39 35 Z"
+    fill="black"
+    stroke="black"
+    stroke-width="2"
+    stroke-linejoin="round"
+  />
+</svg>
