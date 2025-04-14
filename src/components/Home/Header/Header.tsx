@@ -33,7 +33,7 @@ const Header = () => {
       className="w-[90%] !mx-auto h-[100px] flex items-center text-white capitalize"
     >
       <div className="w-full !flex !items-center !justify-between">
-        <h1 className="text-3xl font-[--font-anticDidone]">MA</h1>
+        <h1 className="text-3xl font-[--font-playfair]">MA</h1>
         <nav className="flex items-center gap-4">
           {data.nav.map((item) => (
             <div key={item.name} className="relative text-sm">
@@ -72,7 +72,7 @@ const Header = () => {
               height={120}
               src={"/date.svg"}
               alt="instagram-icon"
-              className="w-4 h-4 invert !mt-[0.2rem]"
+              className="w-4 h-4 !mt-[0.2rem]"
             />
             <span>Contact</span>
           </div>

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Antic_Didone } from "next/font/google";
+import { Geist, Geist_Mono, Playfair } from "next/font/google";
 import "./globals.css";
 import ShowHeader from "@/utils/ShowHeader";
-import Header from "@/components/Home/Header/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +13,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const anticDidone = Antic_Didone({
-  variable: "--font-anticDidone",
+const playfair = Playfair({
+  variable: "--font-playfair",
   weight: ["400"],
   subsets: ["latin"],
 });
@@ -33,11 +32,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${anticDidone.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
       >
-        <ShowHeader>
-          <Header />
-        </ShowHeader>
+        <ShowHeader />
         {children}
       </body>
     </html>

@@ -73,8 +73,8 @@ const Services = () => {
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
-        start: "15% top",
-        end: "+=150%",
+        start: "14% top",
+        end: "+=100%",
         scrub: true,
         pin: true,
         pinSpacing: true,
@@ -98,15 +98,15 @@ const Services = () => {
   return (
     <section
       ref={container}
-      className="w-full h-[610px] relative flex items-center justify-center"
+      className="w-full h-[720px] relative flex items-center justify-center"
     >
       <div
         className="w-[600px] h-[600px] border border-white/30 rounded-full 
         absolute top-[90px] -left-[350px]"
       />
-      <div className="w-[80%] mx-auto text-white flex items-center justify-between gap-[8rem] !pt-[6rem] overflow-hidden">
+      <div className="w-[80%] mx-auto text-white flex items-center justify-between gap-[8rem] overflow-hidden">
         <div className="flex-1 !space-y-12">
-          <div className="justify-self-start text-7xl text-right font-[--font-anticDidone] uppercase leading-[1]">
+          <div className="justify-self-start text-7xl text-right font-[--font-playfair] uppercase leading-[1]">
             <h1 ref={text1}>Passion and</h1>
             <h1 ref={text2}>precision</h1>
           </div>
@@ -114,10 +114,10 @@ const Services = () => {
             ref={text3}
             className="text-white/50 w-[20rem] text-sm justify-self-end"
           >
-            Hey, I'm Nicki, and I've been tattooing in my studio in Düsseldorf
-            since 2017. My expertise lies in mandala and traditional styles, but
-            I'm always open to new creative ideas so we can find your perfect
-            tattoo together.
+            Hey, I&apos;m Nicki, and I&apos;ve been tattooing in my studio in
+            Düsseldorf since 2017. My expertise lies in mandala and traditional
+            styles, but I&apos;m always open to new creative ideas so we can
+            find your perfect tattoo together.
           </p>
         </div>
         <div
