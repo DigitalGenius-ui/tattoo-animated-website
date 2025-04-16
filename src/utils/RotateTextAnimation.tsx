@@ -22,22 +22,30 @@ const RotateTextAnimation = ({
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ref.current,
-        start: "20% top",
+        start: "-40% top",
         end: "bottom 50%",
         scrub: true,
       },
     });
 
-    tl.to(textRef.current, {
-      rotateY: 0,
-      x: 0,
-      opacity: 1,
-      duration: 1.5,
-      delay,
-      ease: "power4.inOut",
-    });
+    tl.to(
+      textRef.current,
+      {
+        rotateY: 0,
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        delay,
+        ease: "power4.inOut",
+      },
+      "a"
+    );
   }, []);
-  return <div ref={textRef}>{text}</div>;
+  return (
+    <div className="rotatetext" ref={textRef}>
+      {text}
+    </div>
+  );
 };
 
 export default RotateTextAnimation;

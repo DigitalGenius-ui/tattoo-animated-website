@@ -61,6 +61,10 @@ body {
   background-blend-mode: multiply;
 }
 
+.rotatetext {
+  @apply rotate-y-50 tracking-wider;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

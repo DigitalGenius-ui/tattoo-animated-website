@@ -19,26 +19,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Gallary = () => {
   const containerRef = useRef(null);
-  const imageref = useRef<(HTMLDivElement | null)[]>([]);
-  const otherImageRef = useRef<(HTMLDivElement | null)[]>([]);
+  const imageRef = useRef<(HTMLDivElement | null)[]>([]);
   const nameRef = useRef(null);
 
   useGSAP(() => {
-    gsap.set(imageref.current, { zIndex: 10 });
+    gsap.set(imageRef?.current[3], { zIndex: 10 });
     gsap.set(nameRef.current, { y: 10, opacity: 0 });
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: "15% top",
-        end: "bottom+=100% top",
+        end: "+=200%",
         scrub: true,
         pin: true,
-        anticipatePin: 1,
       },
     });
 
     tl.to(
-      imageref.current,
+      imageRef.current[3],
       {
         y: -25,
         scale: 3.1,
@@ -49,7 +47,7 @@ const Gallary = () => {
     );
 
     tl.to(
-      otherImageRef.current[0],
+      imageRef.current[0],
       {
         scale: 1.5,
         opacity: 0,
@@ -60,7 +58,7 @@ const Gallary = () => {
       "a"
     );
     tl.to(
-      otherImageRef.current[1],
+      imageRef.current[1],
       {
         scale: 1.5,
         opacity: 0,
@@ -71,7 +69,7 @@ const Gallary = () => {
       "a"
     );
     tl.to(
-      otherImageRef.current[2],
+      imageRef.current[2],
       {
         scale: 1.5,
         opacity: 0,
@@ -82,7 +80,7 @@ const Gallary = () => {
       "a"
     );
     tl.to(
-      otherImageRef.current[4],
+      imageRef.current[4],
       {
         scale: 1.5,
         opacity: 0,
@@ -104,16 +102,12 @@ const Gallary = () => {
     <>
       <section
         ref={containerRef}
-        className="grid grid-cols-6 gap-4 auto-rows-[200px] !pt-[8rem]"
+        className="grid grid-cols-6 gap-4 auto-rows-[200px] !pt-[8rem] overflow-hidden"
       >
         {images.map((img, index) => (
           <div
             ref={(el) => {
-              if (imageref.current && index === 3) {
-                imageref.current[index] = el;
-              } else {
-                otherImageRef.current[index] = el;
-              }
+              imageRef.current[index] = el;
             }}
             key={index}
             className={`relative ${img.col} ${img.row} rounded overflow-hidden`}
@@ -128,7 +122,7 @@ const Gallary = () => {
               <>
                 <div
                   className="uppercase absolute top-[15%] left-[60%] w-[8rem] text-gray-800 
-                  text-5xl font-[--font-playfair] flex flex-col leading-12"
+                  text-5xl !font-[--font-playfair] flex flex-col leading-12"
                 >
                   <h1 className="flex items-center">
                     <RotateTextAnimation
@@ -183,7 +177,6 @@ const Gallary = () => {
           </div>
         ))}
       </section>
-      <div className="h-[120vh] text-white">next page is here</div>
     </>
   );
 };
