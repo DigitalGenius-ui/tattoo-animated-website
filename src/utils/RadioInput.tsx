@@ -1,38 +1,46 @@
 "use client";
 
+import { contactInputType } from "@/components/Contact/Contact";
 import clsx from "clsx";
-import React, { useState } from "react";
+import React from "react";
+import { UseFormSetValue, UseFormWatch } from "react-hook-form";
 
-const RadioInput = ({ title }: { title: string }) => {
-  const [value, setValue] = useState(0);
+type RadioInputProps = {
+  watch: UseFormWatch<contactInputType>;
+  setValue: UseFormSetValue<contactInputType>;
+  name: keyof contactInputType;
+  value: string;
+  label?: boolean;
+};
+
+const RadioInput = ({
+  watch,
+  setValue,
+  name,
+  value,
+  label = true,
+}: RadioInputProps) => {
+  const inputValue = watch(name) as string;
+  const isSelected = inputValue === value;
   return (
-    <div className="!space-y-2 text-white/80 w-full">
-      <p className="text-[10px]">{title}</p>
-      <div className="flex items-center gap-[2rem]">
+    <div className="flex items-center gap-[2rem]">
+      <div
+        onClick={() => setValue(name, value, { shouldValidate: true })}
+        className="flex items-center gap-3 cursor-pointer"
+      >
         <div
-          className="flex items-center gap-3 cursor-pointer"
-          onClick={() => setValue(1)}
+          className={
+            "w-3 h-3 rounded-full border border-white relative overflow-hidden"
+          }
         >
-          <div
+          <span
             className={clsx(
-              `w-3 h-3 rounded-full border border-white `,
-              value === 1 && "bg-white"
+              `absolute inset-0 bg-white rounded-full scale-0 transition-all duration-500`,
+              isSelected && "scale-100 transition-all duration-500"
             )}
           />
-          <p className="text-[10px]">Yes</p>
         </div>
-        <div
-          className="flex items-center gap-3 cursor-pointer"
-          onClick={() => setValue(2)}
-        >
-          <div
-            className={clsx(
-              `w-3 h-3 rounded-full border border-white `,
-              value === 2 && "bg-white"
-            )}
-          />
-          <p className="text-[10px]">No</p>
-        </div>
+        <p className="!text-[13px] capitalize">{label ? value : ""}</p>
       </div>
     </div>
   );
