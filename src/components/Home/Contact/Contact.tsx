@@ -1,17 +1,41 @@
 "use client";
 
-import React from "react";
-import Input from "../../utils/Input";
+import React, { useRef } from "react";
+import Input from "../../../utils/Input";
 import RadioInput from "@/utils/RadioInput";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { conactFormSchema } from "@/schemas/ContactSchema";
 import { z } from "zod";
 import AnimatedButton from "./AnimatedButton";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export type contactInputType = z.input<typeof conactFormSchema>;
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+  const container = useRef<HTMLDivElement | null>(null);
+  const textRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.to(container.current, {
+      scrollTrigger: {
+        trigger: container.current,
+        start: "top top",
+        end: () =>
+          `+=${
+            container.current &&
+            container?.current.scrollHeight - window.innerHeight
+          }`,
+        pin: textRef.current,
+        pinSpacing: false,
+        scrub: true,
+      },
+    });
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -25,10 +49,19 @@ const Contact = () => {
   const onSubmit = (data: contactInputType) => console.log(data);
 
   return (
-    <section className="flex !h-screen !w-[90%] !mx-auto !my-[8rem] !text-white">
-      <div className="flex-1">
-        <h1>Con</h1>
-        <h1>tact</h1>
+    <section
+      ref={container}
+      className="relative flex gap-[7rem] !h-screen !w-[90%] !mx-auto !pt-[8rem] !mb-[8rem] 
+      !text-white"
+    >
+      <div ref={textRef}>
+        <div
+          className="w-full flex-1 text-[8rem] uppercase font-[--font-playfair] 
+          !leading-[1]"
+        >
+          <p className="w-full">Con</p>
+          <p className="w-full text-end">tact</p>
+        </div>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className="flex-1 !space-y-9">
         <div className="flex items-center gap-[3rem]">
@@ -110,12 +143,14 @@ const Contact = () => {
             <p className="!text-[13px]">Is this your first request?</p>
             <div className="flex items-center gap-[4rem]">
               <RadioInput
+                errors={errors}
                 name={"firstTattoo"}
                 value="yes"
                 watch={watch}
                 setValue={setValue}
               />
               <RadioInput
+                errors={errors}
                 name={"firstTattoo"}
                 value="no"
                 watch={watch}
@@ -127,12 +162,14 @@ const Contact = () => {
             <p className="!text-[13px]">Have I ever tattooed you?</p>
             <div className="flex items-center gap-[4rem]">
               <RadioInput
+                errors={errors}
                 watch={watch}
                 setValue={setValue}
                 name={"everTattooed"}
                 value="yes"
               />
               <RadioInput
+                errors={errors}
                 watch={watch}
                 setValue={setValue}
                 name={"everTattooed"}
@@ -143,6 +180,7 @@ const Contact = () => {
         </div>
         <div className="flex items-center gap-1 text-white/60">
           <RadioInput
+            errors={errors}
             watch={watch}
             setValue={setValue}
             name={"confirmTerms"}

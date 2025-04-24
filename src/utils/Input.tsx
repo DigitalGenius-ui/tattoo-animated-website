@@ -1,6 +1,6 @@
 "use client";
 
-import { contactInputType } from "@/components/Contact/Contact";
+import { contactInputType } from "@/components/Home/Contact/Contact";
 import clsx from "clsx";
 import React, { useState } from "react";
 import { FieldErrors, UseFormRegister, UseFormWatch } from "react-hook-form";
@@ -50,7 +50,7 @@ const Input = ({
           isError && "!border-red-500"
         )}
       />
-      <span className="!text-xs text-red-500">
+      <span className="!text-xs text-red-500 absolute -bottom-5 left-0">
         {isError ? String(errors[name]?.message) : null}
       </span>
     </div>

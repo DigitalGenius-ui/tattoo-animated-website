@@ -30,13 +30,14 @@ const Header = () => {
   return (
     <header
       ref={container}
-      className="w-[90%] !mx-auto h-[100px] flex items-center text-white capitalize"
+      className="absolute top-0 left-0 right-0 w-[90%] !mx-auto h-[100px] 
+      flex items-center text-white capitalize z-10"
     >
       <div className="w-full !flex !items-center !justify-between">
-        <h1 className="text-3xl font-[--font-playfair]">MA</h1>
+        <h1 className="text-3xl 4xl:text-5xl font-[--font-playfair]">MA</h1>
         <nav className="flex items-center gap-4">
           {data.nav.map((item) => (
-            <div key={item.name} className="relative text-sm">
+            <div key={item.name} className="relative text-sm 4xl:text-lg">
               <Link
                 className={clsx(`link`, item.path === pathName && "active")}
                 key={item.name}
@@ -53,7 +54,7 @@ const Header = () => {
                 height={120}
                 src={"/insta.svg"}
                 alt="instagram-icon"
-                className="w-4 h-4"
+                className="w-4 h-4 4xl:w-6 4xl:h-6"
               />
             </a>
           </div>

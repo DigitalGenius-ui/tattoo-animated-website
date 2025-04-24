@@ -6,8 +6,9 @@ import Services from "../Services/Services";
 import Gallary from "./Gallary/Gallary";
 import Header from "./Header/Header";
 import Lenis from "lenis";
-import CustomerAgree from "../Customer/CustomerAgree";
-import Contact from "../Contact/Contact";
+import CustomerAgree from "./Customer/CustomerAgree";
+import Contact from "./Contact/Contact";
+import Footer from "./Footer/Footer";
 
 const Home = () => {
   useEffect(() => {
@@ -19,7 +20,7 @@ const Home = () => {
     requestAnimationFrame(raf);
   }, []);
   return (
-    <section>
+    <>
       <div className="bg-no-repeat bg-cover hero-bg relative">
         <Header />
         <Hero />
@@ -28,7 +29,8 @@ const Home = () => {
       <Gallary />
       <CustomerAgree />
       <Contact />
-    </section>
+      <Footer />
+    </>
   );
 };
 

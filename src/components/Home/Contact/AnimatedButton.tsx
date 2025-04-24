@@ -14,22 +14,26 @@ const AnimatedButton = ({ btnName }: { btnName: string }) => {
   const circlePlay = useRef<gsap.core.Timeline>({} as gsap.core.Timeline);
 
   useGSAP(() => {
-    playEffect.current = gsap
-      .timeline({ paused: true })
-      .to(sequareEffect.current, {
+    playEffect.current = gsap.timeline({ paused: true }).to(
+      sequareEffect.current,
+      {
         rotate: 135,
         ease: "circ.in",
         duration: 0.5,
-      });
+      },
+      "a"
+    );
 
-    circlePlay.current = gsap
-      .timeline({ paused: true })
-      .to(circleEffect.current, {
+    circlePlay.current = gsap.timeline({ paused: true }).to(
+      circleEffect.current,
+      {
         scale: 1,
         stagger: 0.1,
         ease: "circ.in",
-        duration: 0.5,
-      });
+        duration: 0.4,
+      },
+      "a"
+    );
   }, []);
 
   useEffect(() => {

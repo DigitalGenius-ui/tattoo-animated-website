@@ -14,7 +14,7 @@ export const conactFormSchema = z.object({
   ),
   tattooNumber: z.string().min(1, { message: "This filed is required!!" }),
   message: z.string().min(20, { message: "Please write a message!!" }),
-  firstTattoo: z.boolean({ message: "This filed is required!!" }),
-  everTattooed: z.boolean({ message: "This filed is required!!" }),
-  confirmTerms: z.boolean({ message: "This filed is required!!" }),
+  firstTattoo: z.string().min(1, { message: "required!!" }),
+  everTattooed: z.string().min(1, { message: "required!!" }),
+  confirmTerms: z.string().min(1, { message: "required!!" }),
 });

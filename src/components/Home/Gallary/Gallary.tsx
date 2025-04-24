@@ -29,7 +29,7 @@ const Gallary = () => {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "15% top",
-        end: "+=200%",
+        end: "+=280%",
         scrub: true,
         pin: true,
       },
@@ -40,8 +40,6 @@ const Gallary = () => {
       {
         y: -25,
         scale: 3.1,
-        duration: 1.75,
-        ease: "power4.inOut",
       },
       "a"
     );
@@ -52,8 +50,6 @@ const Gallary = () => {
         scale: 1.5,
         opacity: 0,
         y: -400,
-        ease: "power2.inOut",
-        duration: 1.5,
       },
       "a"
     );
@@ -63,8 +59,6 @@ const Gallary = () => {
         scale: 1.5,
         opacity: 0,
         x: 700,
-        ease: "power2.inOut",
-        duration: 1.5,
       },
       "a"
     );
@@ -74,8 +68,6 @@ const Gallary = () => {
         scale: 1.5,
         opacity: 0,
         x: -700,
-        ease: "power2.inOut",
-        duration: 1.5,
       },
       "a"
     );
@@ -85,8 +77,6 @@ const Gallary = () => {
         scale: 1.5,
         opacity: 0,
         y: 700,
-        ease: "power2.inOut",
-        duration: 1.5,
       },
       "a"
     );
@@ -94,8 +84,6 @@ const Gallary = () => {
     tl.to(nameRef.current, {
       opacity: 1,
       y: 0,
-      ease: "power2.inOut",
-      duration: 1.5,
     });
   }, []);
   return (
