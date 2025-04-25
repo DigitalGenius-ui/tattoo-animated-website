@@ -97,9 +97,8 @@ const Hero = () => {
       />
       <TextAnimate
         ref={textRef}
-        className="font-[--font-playfair] uppercase text-[6.5rem] 
-        3xl:text-[7.5rem] 4xl:text-[8.5rem] 5xl:text-[12rem]
-        tracking-wider absolute top-24 4xl:top-60 5xl:top-48 z-1"
+        className="font-[--font-playfair] uppercase text-[8vw]
+        tracking-wider absolute top-24 4xl:top-60 5xl:top-40 z-1 cursor-pointer-none"
         animation="blurInUp"
         by="character"
         duration={1.3}

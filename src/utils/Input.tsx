@@ -33,7 +33,9 @@ const Input = ({
       <label
         htmlFor={name}
         className={`absolute transition-all duration-500 pointer-events-none text-white/60 ${
-          focused || small ? "!text-[8px] !-top-2.5" : "!text-[13px] !-top-0.5"
+          focused || small
+            ? "!text-[0.9vw] !-top-2.5 4xl:!-top-5"
+            : "!text-[1.2vw] !-top-0.5 4xl:!-top-3"
         }`}
       >
         {label}

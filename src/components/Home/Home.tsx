@@ -25,10 +25,14 @@ const Home = () => {
         <Header />
         <Hero />
       </div>
+      <div className="!h-[8rem] 6xl:!h-[20rem]" />
       <Services />
+      <div className="!h-[25rem] 3xl:!h-[35rem] 4xl:!h-[45rem] 6xl:!h-[60rem]" />
       <Gallary />
+      <div className="!h-[8rem]" />
       <CustomerAgree />
       <Contact />
+      <div className="!h-[5rem]" />
       <Footer />
     </>
   );

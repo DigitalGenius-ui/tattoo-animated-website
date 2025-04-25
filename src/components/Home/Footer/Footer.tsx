@@ -106,30 +106,30 @@ const Footer = () => {
         position: "relative",
       }}
     >
-      <div className="w-full h-full flex items-center justify-center">
+      <div className="w-full h-full flex items-center justify-center 3xl:scale-125 4xl:scale-[2]">
         <Image
-          className="footer-img big-circle scale-50"
+          className="footer-img big-circle scale-0"
           width={400}
           height={400}
           src={"/footer/bigCircle.svg"}
           alt="big-circle"
         />
         <Image
-          className="footer-img big-recangle scale-50"
+          className="footer-img big-recangle scale-0"
           width={400}
           height={400}
           src={"/footer/bigRecangle.svg"}
           alt="big-circle"
         />
         <Image
-          className="footer-img small-circle scale-50"
+          className="footer-img small-circle scale-0"
           width={400}
           height={400}
           src={"/footer/smallCircle.svg"}
           alt="big-circle"
         />
         <Image
-          className="footer-img small-recangle scale-50"
+          className="footer-img small-recangle scale-0"
           width={400}
           height={400}
           src={"/footer/smallRecangle.svg"}
@@ -164,7 +164,7 @@ const Footer = () => {
         alt="line-bottom"
         className="absolute bottom-5.8 object-center single-line-bottom"
       />
-      <div className="absolute top-[35%] group cursor-pointer w-[55rem] text-center">
+      <div className="absolute top-[35%] 4xl:top-[40%] group cursor-pointer w-full text-center">
         <p
           className="uppercase text-white/40 text-center group-hover:scale-105 
             group-hover:tracking-widest group-hover:text-white transition-all duration-500"
@@ -173,9 +173,9 @@ const Footer = () => {
         </p>
         <div
           className="w-0 right-0 group-hover:left-0 group-hover:w-full transition-all duration-500
-            h-[1px] bg-[#b9b9b9] absolute top-[58%] footer-line z-0"
+            h-[1px] bg-[#b9b9b9] absolute top-[50%] footer-line z-0"
         />
-        <h1 className="uppercase text-white text-9xl font-[--font-playfair] z-10 relative">
+        <h1 className="uppercase text-white text-9xl 4xl:text-[11rem] font-[--font-playfair] z-10 relative">
           about me
         </h1>
       </div>

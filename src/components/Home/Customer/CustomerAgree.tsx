@@ -4,10 +4,15 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useRef } from "react";
-import Image from "next/image";
-import "./customer.css";
+import AnimatedImages from "@/utils/AnimatedImages";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const images = [
+  "/reviews/reviews-1-desktop.jpg",
+  "/reviews/reviews-2-desktop.jpg",
+  "/reviews/reviews-3-desktop.jpg",
+];
 
 const CustomerAgree = () => {
   const container = useRef(null);
@@ -17,6 +22,8 @@ const CustomerAgree = () => {
 
   const svgParent = useRef(null);
   const svgRef = useRef(null);
+
+  const timeline = useRef<gsap.core.Timeline>({} as gsap.core.Timeline);
 
   useGSAP(
     () => {
@@ -56,17 +63,6 @@ const CustomerAgree = () => {
         "a"
       );
 
-      tl2.to(
-        ".img1",
-        {
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-          scale: 1,
-          duration: 1,
-          stagger: 0.8,
-        },
-        "a"
-      );
-
       tl2.fromTo(
         ".texts",
         {
@@ -81,6 +77,8 @@ const CustomerAgree = () => {
         },
         "a"
       );
+
+      timeline.current = tl2;
     },
     { scope: container }
   );
@@ -88,7 +86,7 @@ const CustomerAgree = () => {
     <section ref={container} className="!relative">
       <div
         className="flex items-end justify-end flex-col font-[--font-playfair] 
-      text-white text-9xl uppercase"
+      text-white text-[8vw] uppercase leading-24 4xl:leading-30 6xl:leading-48"
       >
         <h1 ref={text1} className="rotatetext">
           Customers
@@ -99,7 +97,8 @@ const CustomerAgree = () => {
       </div>
       <div ref={svgParent} className="!h-[100vh]">
         <svg
-          className="w-[32rem] h-[32rem] absolute top-[10%] left-[29.5%]"
+          className="size-[32rem] 3xl:size-[40rem] 4xl:size-[50rem] 6xl:size-[70rem]
+          absolute top-[10%] 4xl:top-[20%] 5xl:top-[10%] left-[29.5%]"
           viewBox="0 0 100 100"
         >
           <circle
@@ -130,40 +129,14 @@ const CustomerAgree = () => {
           className="!w-[90%] !mx-auto h-full !z-10 relative flex"
         >
           {/* left side  */}
-          <div className="flex-1 overflow-hidden relative">
-            <div className="relative">
-              <Image
-                width={200}
-                height={200}
-                src={"/reviews/reviews-1-desktop.jpg"}
-                alt="review-img"
-                className="w-[100%] object-fit customerImages"
-              />
-            </div>
-            <div>
-              <Image
-                width={200}
-                height={200}
-                src={"/reviews/reviews-2-desktop.jpg"}
-                alt="review-img"
-                className="img1 !z-1 w-[100%] object-fit customerImages"
-              />
-            </div>
-            <div>
-              <Image
-                width={200}
-                height={200}
-                src={"/reviews/reviews-3-desktop.jpg"}
-                alt="review-img"
-                className="img1 !z-2 w-[100%] object-fit customerImages"
-              />
-            </div>
-          </div>
+          <AnimatedImages images={images} timeline={timeline} />
           {/* right side  */}
           <div className="flex-1 overflow-hidden relative">
             <div className="texts text h-screen flex items-start flex-col justify-center !pl-[10rem]">
-              <h1 className="uppercase text-sm text-white/80 !pb-6">andi</h1>
-              <p className="text-white/50 text-xs w-[17rem]">
+              <h1 className="uppercase text-[1.3vw] text-white/80 !pb-6">
+                andi
+              </h1>
+              <p className="text-white/50 text-[1vw] w-[20vw]">
                 Nicki is incredibly professional. She took the time to
                 understand my idea and transform it into a beautiful tattoo. Her
                 empathetic manner immediately put me at ease, and throughout the
@@ -173,8 +146,10 @@ const CustomerAgree = () => {
               </p>
             </div>
             <div className="texts text flex flex-col justify-center h-screen  !pl-[10rem]">
-              <h1 className="uppercase text-sm text-white/80 !pb-6">Marie</h1>
-              <p className="text-white/50 text-xs w-[17rem]">
+              <h1 className="uppercase text-white/80 text-[1.3vw] !pb-6">
+                Marie
+              </h1>
+              <p className="text-white/50 text-[1vw] w-[20vw]">
                 I was a little concerned about the pain, but Nicki explained
                 everything so well that I immediately relaxed. She showed me
                 several designs and made sure I was happy with everything. Her
@@ -184,8 +159,10 @@ const CustomerAgree = () => {
               </p>
             </div>
             <div className="texts flex flex-col justify-center h-screen !pl-[10rem]">
-              <h1 className="uppercase text-sm text-white/80 !pb-6">Vera</h1>
-              <p className="text-white/50 text-xs w-[17rem]">
+              <h1 className="uppercase text-[1.3vw] text-white/80 !pb-6">
+                Vera
+              </h1>
+              <p className="text-white/50 text-[1vw] w-[20vw]">
                 I felt comfortable with Nicki from the very beginning. Her
                 professional approach and precision are impressive. She has a
                 knack for putting people at ease, and her studio is very clean

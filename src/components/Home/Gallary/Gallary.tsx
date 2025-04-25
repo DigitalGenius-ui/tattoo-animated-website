@@ -28,8 +28,8 @@ const Gallary = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "15% top",
-        end: "+=280%",
+        start: "top top",
+        end: "+=300%",
         scrub: true,
         pin: true,
       },
@@ -90,7 +90,9 @@ const Gallary = () => {
     <>
       <section
         ref={containerRef}
-        className="grid grid-cols-6 gap-4 auto-rows-[200px] !pt-[8rem] overflow-hidden"
+        className="!min-h-screen 3xl:min-h-[1300px] grid grid-cols-6 gap-4  
+        auto-rows-[200px] 3xl:auto-rows-[280px] 4xl:auto-rows-[400px] 5xl:auto-rows-[350px] 6xl:auto-rows-[480px]
+        overflow-hidden"
       >
         {images.map((img, index) => (
           <div
@@ -110,7 +112,7 @@ const Gallary = () => {
               <>
                 <div
                   className="uppercase absolute top-[15%] left-[60%] w-[8rem] text-gray-800 
-                  text-5xl !font-[--font-playfair] flex flex-col leading-12"
+                  text-5xl !font-[--font-playfair] flex flex-col leading-12 3xl:scale-110 4xl:scale-125 6xl:scale-150 6xl:leading-14"
                 >
                   <h1 className="flex items-center">
                     <RotateTextAnimation
@@ -156,7 +158,7 @@ const Gallary = () => {
                 </div>
                 <h1
                   ref={nameRef}
-                  className="uppercase underline absolute bottom-[15%] left-[60%] text-sm font-light"
+                  className="uppercase underline absolute bottom-[15%] left-[60%] text-[0.7vw] font-light"
                 >
                   ansehen
                 </h1>
