@@ -9,6 +9,7 @@ import Lenis from "lenis";
 import CustomerAgree from "./Customer/CustomerAgree";
 import Contact from "./Contact/Contact";
 import Footer from "./Footer/Footer";
+import Spacer from "@/utils/Spacer";
 
 const Home = () => {
   useEffect(() => {
@@ -21,18 +22,18 @@ const Home = () => {
   }, []);
   return (
     <>
-      <div className="bg-no-repeat bg-cover hero-bg relative">
+      <div className="bg-no-repeat bg-cover hero-bg relative z-10">
         <Header />
         <Hero />
       </div>
-      <div className="!h-[8rem] 6xl:!h-[20rem]" />
+      <Spacer className="hidden 2xl:block !h-[8rem] 6xl:!h-[20rem]" />
       <Services />
-      <div className="!h-[25rem] 3xl:!h-[35rem] 4xl:!h-[45rem] 6xl:!h-[60rem]" />
+      <Spacer className="hidden 2xl:block !h-[25rem] 3xl:!h-[35rem] 4xl:!h-[45rem] 6xl:!h-[60rem]" />
       <Gallary />
-      <div className="!h-[8rem]" />
-      <CustomerAgree />
-      <Contact />
-      <div className="!h-[5rem]" />
+      {/* <Spacer className="!h-[8rem] hidden 2xl:block" /> */}
+      {/* <CustomerAgree />
+      <Contact /> */}
+      {/* <Spacer className="hidden 2xl:block !h-[5rem] 4xl:!h-[8rem]" /> */}
       <Footer />
     </>
   );

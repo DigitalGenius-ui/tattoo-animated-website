@@ -48,7 +48,7 @@ const CustomerAgree = () => {
         scrollTrigger: {
           trigger: svgParent.current,
           start: `top top`,
-          end: "+=1800",
+          end: "+=1600",
           scrub: true,
           pin: true,
         },
@@ -58,7 +58,7 @@ const CustomerAgree = () => {
         svgRef.current,
         {
           strokeDashoffset: 0,
-          duration: 2,
+          duration: 1.5,
         },
         "a"
       );
@@ -83,7 +83,7 @@ const CustomerAgree = () => {
     { scope: container }
   );
   return (
-    <section ref={container} className="!relative">
+    <section ref={container} className="!relative hidden 2xl:block">
       <div
         className="flex items-end justify-end flex-col font-[--font-playfair] 
       text-white text-[8vw] uppercase leading-24 4xl:leading-30 6xl:leading-48"
@@ -97,7 +97,7 @@ const CustomerAgree = () => {
       </div>
       <div ref={svgParent} className="!h-[100vh]">
         <svg
-          className="size-[32rem] 3xl:size-[40rem] 4xl:size-[50rem] 6xl:size-[70rem]
+          className="size-[32rem] 3xl:size-[40rem] 4xl:size-[40rem] 6xl:size-[70rem]
           absolute top-[10%] 4xl:top-[20%] 5xl:top-[10%] left-[29.5%]"
           viewBox="0 0 100 100"
         >

@@ -1,11 +1,12 @@
 "use client";
 
+import { useGallaryAnimation } from "@/AnimationHooks/useGallaryAnimation";
 import RotateTextAnimation from "@/utils/RotateTextAnimation";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import React, { useRef } from "react";
+import MobileGallary from "./MobileGallary";
 
 const images = [
   { src: "/gallery1.jpg", col: "col-span-4", row: "row-span-1" },
@@ -22,75 +23,13 @@ const Gallary = () => {
   const imageRef = useRef<(HTMLDivElement | null)[]>([]);
   const nameRef = useRef(null);
 
-  useGSAP(() => {
-    gsap.set(imageRef?.current[3], { zIndex: 10 });
-    gsap.set(nameRef.current, { y: 10, opacity: 0 });
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "+=300%",
-        scrub: true,
-        pin: true,
-      },
-    });
-
-    tl.to(
-      imageRef.current[3],
-      {
-        y: -25,
-        scale: 3.1,
-      },
-      "a"
-    );
-
-    tl.to(
-      imageRef.current[0],
-      {
-        scale: 1.5,
-        opacity: 0,
-        y: -400,
-      },
-      "a"
-    );
-    tl.to(
-      imageRef.current[1],
-      {
-        scale: 1.5,
-        opacity: 0,
-        x: 700,
-      },
-      "a"
-    );
-    tl.to(
-      imageRef.current[2],
-      {
-        scale: 1.5,
-        opacity: 0,
-        x: -700,
-      },
-      "a"
-    );
-    tl.to(
-      imageRef.current[4],
-      {
-        scale: 1.5,
-        opacity: 0,
-        y: 700,
-      },
-      "a"
-    );
-
-    tl.to(nameRef.current, {
-      opacity: 1,
-      y: 0,
-    });
-  }, []);
+  useGallaryAnimation({ containerRef, imageRef, nameRef });
   return (
     <>
+      <MobileGallary />
       <section
         ref={containerRef}
-        className="!min-h-screen 3xl:min-h-[1300px] grid grid-cols-6 gap-4  
+        className="hidden 2xl:grid !min-h-screen 3xl:min-h-[1300px] grid-cols-6 gap-4  
         auto-rows-[200px] 3xl:auto-rows-[280px] 4xl:auto-rows-[400px] 5xl:auto-rows-[350px] 6xl:auto-rows-[480px]
         overflow-hidden"
       >

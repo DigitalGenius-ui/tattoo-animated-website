@@ -54,7 +54,7 @@ const Contact = () => {
       <div className="!h-[8rem]" />
       <section
         ref={container}
-        className="relative flex gap-[2rem] max-h-full !w-[90%] !mx-auto
+        className="relative hidden 2xl:flex gap-[4rem] 5xl:gap-[8rem] max-h-full !w-[90%] !mx-auto
       !text-white"
       >
         <div className="flex-1" ref={textRef}>
@@ -68,7 +68,7 @@ const Contact = () => {
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="!flex-1 !w-[200rem] !space-y-9 4xl:scale-104"
+          className="!flex-1 !w-[200rem] !space-y-9 4xl:!space-y-[4rem] 4xl:scale-104"
         >
           <div ref={inputDivRef} className="flex items-center gap-[3rem]">
             <Input
@@ -146,7 +146,7 @@ const Contact = () => {
           </div>
           <div className="flex items-center gap-[3rem] text-white/60">
             <div className="flex-1 !space-y-3">
-              <p className="!text-[13px]">Is this your first request?</p>
+              <p className="!text-[1vw]">Is this your first request?</p>
               <div className="flex items-center gap-[4rem]">
                 <RadioInput
                   errors={errors}
@@ -165,7 +165,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex-1 !space-y-3">
-              <p className="!text-[13px]">Have I ever tattooed you?</p>
+              <p className="!text-[1vw]">Have I ever tattooed you?</p>
               <div className="flex items-center gap-[4rem]">
                 <RadioInput
                   errors={errors}
@@ -193,7 +193,7 @@ const Contact = () => {
               value="yes"
               label={false}
             />
-            <p className="text-[13px]">
+            <p className="text-[1vw]">
               I have read and accepted the privacy policy.*
             </p>
           </div>

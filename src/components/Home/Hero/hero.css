@@ -1,0 +1,13 @@
+.hero-mobile-bg {
+  background-image: url("/eli-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (min-width: 1200px) {
+  .hero-bg {
+    background-image: linear-gradient(#4d4d4d, #525252), url("/texture-bg.jpg");
+    background-blend-mode: multiply;
+  }
+}

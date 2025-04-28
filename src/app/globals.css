@@ -56,16 +56,12 @@ body {
   overflow-x: hidden !important;
 }
 
-.hero-bg {
-  background-image: linear-gradient(#4d4d4d, #525252), url("/texture-bg.jpg");
-  background-blend-mode: multiply;
-}
-
 .rotatetext {
   @apply rotate-y-50 tracking-wider;
 }
 
 @theme inline {
+  --breakpoint-xs: 500px;
   --breakpoint-2xl: 1200px;
   --breakpoint-3xl: 1440px;
   --breakpoint-4xl: 1600px;

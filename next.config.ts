@@ -2,7 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["cdn.create.vista.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.create.vista.com",
+      },
+    ],
   },
 };
 
