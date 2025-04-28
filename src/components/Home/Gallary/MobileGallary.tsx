@@ -66,7 +66,7 @@ const MobileGallary = () => {
       </div>
       <div
         ref={middleImgDiv}
-        className="w-1/3 h-2/6 absolute top-[15rem] xs:top-[18rem] left-[33%]"
+        className="w-1/3 h-2/6 absolute top-[17rem] xs:top-[18rem] left-[33%]"
       >
         <div className="relative w-full h-full overflow-hidden">
           <Image
