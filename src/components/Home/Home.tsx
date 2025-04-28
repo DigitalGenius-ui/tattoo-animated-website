@@ -11,12 +11,22 @@ import Contact from "./Contact/Contact";
 import Footer from "./Footer/Footer";
 import Spacer from "@/utils/Spacer";
 
+import "lenis/dist/lenis.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const Home = () => {
   useEffect(() => {
-    const lenis = new Lenis({duration: 1.2,
-  easing: (t) => t,
-  smooth: true,
-  wheelMultiplier:1});
+    const lenis = new Lenis({ autoRaf: true });
+
+    lenis.on("scroll", ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
