@@ -40,13 +40,13 @@ const MobileGallary = () => {
   const middleImg = useRef(null);
   const middleImgDiv = useRef(null);
 
-  useMobileGallaryAnimation({ container, imagesRef, middleImg, middleImgDiv });
+  useMobileGallaryAnimation({ container, imagesRef, middleImgDiv });
   return (
     <section
       ref={container}
-      className="2xl:hidden !min-h-screen !overflow-hidden"
+      className="2xl:hidden min-h-screen !overflow-hidden"
     >
-      <div className="w-full !relative">
+      <div className="w-full h-full !relative">
         <div className="relative !ml-[1rem]">
           {images1.map((img, i) => (
             <Image
@@ -77,23 +77,28 @@ const MobileGallary = () => {
             />
           ))}
         </div>
-        <div
-          ref={middleImgDiv}
-          className="absolute w-[40%] h-[290px] top-[12rem] left-[30%]
-          xxs:h-[320px] xxs:top-[18rem]
-          md:h-[410px] md:top-[19rem]
-          lg:h-[600px] lg:top-[24rem] lg:left-[33%]"
-        >
-          <div className="relative w-full h-full overflow-hidden">
-            <Image
-              ref={middleImg}
-              width={400}
-              height={300}
-              src="/gallery3.jpg"
-              alt="gallary-mobile-img"
-              className="w-full h-full object-cover"
-            />
-            {/* <div className="absolute inset-0 bg-gray-500"></div> */}
+        <div className="absolute inset-0">
+          <div className="w-full h-full flex items-center justify-center relative">
+            <div
+              ref={middleImgDiv}
+              className="relative
+                w-[40%] h-[300px]
+                xxs:h-[370px]
+                md:h-[410px]
+                lg:w-[45%] lg:h-[600px]"
+            >
+              <Image
+                ref={middleImg}
+                width={400}
+                height={300}
+                src="/gallery3.jpg"
+                alt="gallary-mobile-img"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 z-10">
+                <h1>hi</h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>

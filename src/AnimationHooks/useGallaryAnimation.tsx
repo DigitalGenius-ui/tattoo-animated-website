@@ -87,14 +87,12 @@ export const useGallaryAnimation = ({
 
 type MobileGallaryImgPropsType = {
   container: React.RefObject<null>;
-  middleImg: React.RefObject<null>;
   middleImgDiv: React.RefObject<null>;
   imagesRef: React.RefObject<(HTMLDivElement | null)[]>;
 };
 
 export const useMobileGallaryAnimation = ({
   container,
-  middleImg,
   imagesRef,
   middleImgDiv,
 }: MobileGallaryImgPropsType) => {
@@ -110,22 +108,10 @@ export const useMobileGallaryAnimation = ({
     });
 
     tl.to(
-      middleImg.current,
-      {
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        opacity: 0.3,
-      },
-      "a"
-    );
-
-    tl.to(
       middleImgDiv.current,
       {
-        scale: 3.1,
-        y: -40,
+        width: "100vw",
+        height: "100%",
       },
       "a"
     );
