@@ -12,7 +12,7 @@ const images1 = [
   {
     src: "/gallery1.jpg",
     className:
-      "w-[70%] h-[150px] xxs:h-[200px] md:h-[280px] lg:h-[350px] object-cover",
+      "w-[70%] h-[9.5rem] xxs:h-[200px] md:h-[280px] lg:h-[350px] object-cover",
   },
   {
     src: "/gallery2.jpg",
@@ -30,7 +30,7 @@ const images2 = [
   {
     src: "/gallery5.jpg",
     className:
-      "w-[70%] h-[150px] xxs:h-[200px] md:h-[280px] lg:h-[350px] object-cover absolute right-0 -bottom-30 xxs:-bottom-40",
+      "w-[70%] h-[9.5rem] xxs:h-[200px] md:h-[280px] lg:h-[350px] object-cover absolute right-0 -bottom-30 xxs:-bottom-40",
   },
 ];
 
