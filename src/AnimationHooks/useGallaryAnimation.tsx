@@ -87,14 +87,14 @@ export const useGallaryAnimation = ({
 
 type MobileGallaryImgPropsType = {
   container: React.RefObject<null>;
-  middleImgDiv: React.RefObject<null>;
+  middleImg: React.RefObject<null>;
   imagesRef: React.RefObject<(HTMLDivElement | null)[]>;
 };
 
 export const useMobileGallaryAnimation = ({
   container,
+  middleImg,
   imagesRef,
-  middleImgDiv,
 }: MobileGallaryImgPropsType) => {
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -108,7 +108,7 @@ export const useMobileGallaryAnimation = ({
     });
 
     tl.to(
-      middleImgDiv.current,
+      middleImg.current,
       {
         width: "100vw",
         height: "100%",

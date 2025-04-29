@@ -38,9 +38,8 @@ const MobileGallary = () => {
   const container = useRef(null);
   const imagesRef = useRef<(HTMLImageElement | null)[]>([]);
   const middleImg = useRef(null);
-  const middleImgDiv = useRef(null);
 
-  useMobileGallaryAnimation({ container, imagesRef, middleImgDiv });
+  useMobileGallaryAnimation({ container, imagesRef, middleImg });
   return (
     <section
       ref={container}
@@ -78,26 +77,23 @@ const MobileGallary = () => {
           ))}
         </div>
         <div className="absolute inset-0">
-          <div className="w-full h-full flex items-center justify-center relative">
+          <div className="w-full h-full flex items-center justify-center">
             <div
-              ref={middleImgDiv}
-              className="relative
-                w-[40%] h-[300px]
-                xxs:h-[370px]
+              ref={middleImg}
+              className="
+                w-[45%] h-[300px]
+                xxs:h-[410px]
                 md:h-[410px]
-                lg:w-[45%] lg:h-[600px]"
+                lg:h-[600px]"
             >
               <Image
-                ref={middleImg}
                 width={400}
                 height={300}
                 src="/gallery3.jpg"
                 alt="gallary-mobile-img"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 z-10">
-                <h1>hi</h1>
-              </div>
+              <div className="absolute"></div>
             </div>
           </div>
         </div>
