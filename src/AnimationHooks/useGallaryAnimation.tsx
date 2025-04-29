@@ -125,7 +125,7 @@ export const useMobileGallaryAnimation = ({
       middleImgDiv.current,
       {
         scale: 3.1,
-        y: -60,
+        y: -40,
       },
       "a"
     );

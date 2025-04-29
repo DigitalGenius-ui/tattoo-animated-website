@@ -61,7 +61,8 @@ body {
 }
 
 @theme inline {
-  --breakpoint-xs: 500px;
+  --breakpoint-xxs: 390px;
+  --breakpoint-xs: 400px;
   --breakpoint-2xl: 1200px;
   --breakpoint-3xl: 1440px;
   --breakpoint-4xl: 1600px;

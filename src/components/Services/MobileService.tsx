@@ -8,7 +8,7 @@ import Spacer from "@/utils/Spacer";
 const MobileService = () => {
   return (
     <section className="2xl:hidden relative w-[95%] !mx-auto">
-      <Spacer className="h-[12rem] 2xl:!h-[18rem]" />
+      <Spacer className="h-[5rem] xs:h-[12rem] 2xl:!h-[18rem]" />
       <div className=" w-full">
         <Image
           width={400}
@@ -40,7 +40,7 @@ const MobileService = () => {
           your perfect tattoo together.
         </p>
       </div>
-      <Spacer className="h-[12rem] 2xl:!h-[18rem]" />
+      <Spacer className="h-[5rem] xs:h-[12rem] 2xl:!h-[18rem]" />
     </section>
   );
 };
