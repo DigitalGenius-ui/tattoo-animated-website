@@ -97,11 +97,13 @@ export const useMobileGallaryAnimation = ({
   imagesRef,
 }: MobileGallaryImgPropsType) => {
   useGSAP(() => {
+    gsap.set(".line1", { opacity: 0, y: -50 });
+    gsap.set(".line2", { opacity: 0, y: 50 });
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
         start: "top top",
-        end: "+=1800",
+        end: "+=1200",
         scrub: true,
         pin: true,
       },
@@ -111,7 +113,7 @@ export const useMobileGallaryAnimation = ({
       middleImg.current,
       {
         width: "100vw",
-        height: "100%",
+        height: "100vh",
       },
       "a"
     );
@@ -120,7 +122,7 @@ export const useMobileGallaryAnimation = ({
       imagesRef.current[0],
       {
         scale: 2,
-        y: -1000,
+        y: -600,
       },
       "a"
     );
@@ -129,8 +131,8 @@ export const useMobileGallaryAnimation = ({
       imagesRef.current[1],
       {
         scale: 2,
-        x: 800,
-        y: -800,
+        x: 700,
+        y: -400,
       },
       "a"
     );
@@ -140,7 +142,6 @@ export const useMobileGallaryAnimation = ({
       {
         scale: 2,
         x: -700,
-        y: 800,
       },
       "a"
     );
@@ -149,7 +150,76 @@ export const useMobileGallaryAnimation = ({
       imagesRef.current[3],
       {
         scale: 2,
-        y: 800,
+        y: 600,
+      },
+      "a"
+    );
+
+    tl.to(
+      ".dark-bg",
+      {
+        opacity: 1,
+      },
+      "a"
+    );
+    tl.to(
+      ".shape1",
+      {
+        scale: 1,
+        rotate: 135,
+      },
+      "a"
+    );
+
+    tl.to(
+      ".shape2",
+      {
+        scale: 1,
+        rotate: -135,
+      },
+      "a"
+    );
+
+    tl.to(
+      ".shape3",
+      {
+        scale: 1,
+      },
+      "a"
+    );
+
+    tl.to(
+      ".shape4",
+      {
+        scale: 1,
+        delay: 0.05,
+      },
+      "a"
+    );
+
+    tl.to(
+      ".gal-text",
+      {
+        opacity: 1,
+        delay: 0.2,
+      },
+      "a"
+    );
+
+    tl.to(
+      ".line1",
+      {
+        y: 0,
+        opacity: 1,
+      },
+      "a"
+    );
+
+    tl.to(
+      ".line2",
+      {
+        y: 0,
+        opacity: 1,
       },
       "a"
     );
