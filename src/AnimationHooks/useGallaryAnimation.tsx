@@ -7,7 +7,7 @@ import React from "react";
 type GallaryAnimationProps = {
   imageRef: React.RefObject<(HTMLDivElement | null)[]>;
   nameRef: React.RefObject<null>;
-  containerRef: React.RefObject<null>;
+  containerRef: React.RefObject<HTMLDivElement | null>;
 };
 
 export const useGallaryAnimation = ({
@@ -18,6 +18,8 @@ export const useGallaryAnimation = ({
   useGSAP(() => {
     gsap.set(imageRef?.current[3], { zIndex: 10 });
     gsap.set(nameRef.current, { y: 10, opacity: 0 });
+    gsap.set(".galText", { rotateY: 90, x: 20, opacity: 0 });
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -33,6 +35,17 @@ export const useGallaryAnimation = ({
       {
         y: -25,
         scale: 3.1,
+      },
+      "a"
+    );
+
+    tl.to(
+      ".galText",
+      {
+        rotateY: 0,
+        x: 0,
+        opacity: 1,
+        stagger: 0.15,
       },
       "a"
     );
@@ -74,10 +87,15 @@ export const useGallaryAnimation = ({
       "a"
     );
 
-    tl.to(nameRef.current, {
-      opacity: 1,
-      y: 0,
-    });
+    tl.to(
+      nameRef.current,
+      {
+        opacity: 1,
+        y: 0,
+        delay: 0.1,
+      },
+      "a"
+    );
 
     return () => {
       tl.scrollTrigger?.kill();
@@ -103,7 +121,7 @@ export const useMobileGallaryAnimation = ({
       scrollTrigger: {
         trigger: container.current,
         start: "top top",
-        end: "+=1200",
+        end: "+=1000",
         scrub: true,
         pin: true,
       },

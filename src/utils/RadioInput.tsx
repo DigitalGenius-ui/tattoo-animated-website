@@ -34,7 +34,7 @@ const RadioInput = ({
       >
         <div
           className={clsx(
-            "size-[0.8rem] 4xl:size-[1rem] rounded-full border border-white relative overflow-hidden",
+            "size-[0.8rem] s:size-[1.2rem] 2xl:size-[0.8rem] 4xl:size-[1rem] rounded-full border border-white relative overflow-hidden",
             isError && "!border-rose-500"
           )}
         >
@@ -45,11 +45,10 @@ const RadioInput = ({
             )}
           />
         </div>
-        <p className="!text-[1vw] capitalize">{label ? value : ""}</p>
+        <p className="!text-[0.8rem] s:!text-[0.9rem] 2xl:!text-[1vw] capitalize">
+          {label ? value : ""}
+        </p>
       </div>
-      <span className="!text-[0.5vw] text-red-500 absolute -bottom-5 left-0">
-        {isError ? String(errors[name]?.message) : null}
-      </span>
     </div>
   );
 };

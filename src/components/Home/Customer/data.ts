@@ -1,3 +1,9 @@
+export const customerImages = [
+  "/reviews/reviews-1-desktop.jpg",
+  "/reviews/reviews-2-desktop.jpg",
+  "/reviews/reviews-3-desktop.jpg",
+];
+
 export const data = [
   {
     name: "andi",

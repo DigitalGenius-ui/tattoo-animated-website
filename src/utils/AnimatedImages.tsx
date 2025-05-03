@@ -10,12 +10,12 @@ type AnimatedImagesProps = {
 };
 
 const AnimatedImages = ({ images, timeline }: AnimatedImagesProps) => {
-  const imageRef = useRef<HTMLImageElement[]>([]);
+  const imageRef = useRef<HTMLDivElement[]>([]);
   useEffect(() => {
-    if (!timeline.current) return;
+    const targets = imageRef.current.slice(1);
 
-    timeline.current?.to(
-      imageRef.current,
+    timeline.current.to(
+      targets,
       {
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
         scale: 1.2,
@@ -27,23 +27,22 @@ const AnimatedImages = ({ images, timeline }: AnimatedImagesProps) => {
   return (
     <div className="flex-1 overflow-hidden relative h-[100vh]">
       {images.map((img, i) => (
-        <div key={`image_${i}`}>
+        <div
+          key={`image_${i}`}
+          ref={(el) => {
+            if (el) imageRef.current[i] = el;
+          }}
+          style={{
+            clipPath: i !== 0 ? "polygon(0 0, 100% 0, 100% 0, 0 0)" : undefined,
+          }}
+          className="w-full h-full absolute top-0 left-0"
+        >
           <Image
-            ref={(el) => {
-              if (i !== 0 && el) imageRef.current.push(el);
-            }}
-            style={{
-              clipPath: i !== 0 ? "polygon(0 0, 100% 0, 100% 0, 0 0)" : "",
-            }}
             width={200}
             height={200}
             src={img}
             alt="animated-img"
-            className={clsx(
-              `w-full h-full object-cover absolute top-0 left-0 ${
-                i !== 0 && `!z-${i}`
-              }`
-            )}
+            className={clsx(`w-full h-full object-cover ${`!z-${i}`}`)}
           />
         </div>
       ))}

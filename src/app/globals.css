@@ -60,6 +60,22 @@ body {
   @apply rotate-y-50 tracking-wider;
 }
 
+.darkWhite {
+  color: #ffffffab;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: brightness(0) invert(1) !important;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  background-color: #ffffffab;
+  padding: 0.2rem;
+  color: black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 @theme inline {
   --breakpoint-xxs: 390px;
   --breakpoint-xs: 400px;

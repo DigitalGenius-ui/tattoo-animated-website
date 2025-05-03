@@ -43,9 +43,11 @@ const Home = () => {
       <Services />
       <Spacer className="hidden 2xl:block !h-[25rem] 3xl:!h-[35rem] 4xl:!h-[45rem] 6xl:!h-[60rem]" />
       <Gallary />
-      <Spacer className="!h-[8rem] hidden 2xl:block" />
+      <Spacer className="!h-[10rem]" />
       <CustomerAgree />
+      <Spacer className="!h-[10rem]" />
       <Contact />
+      <Spacer className="!h-[10rem]" />
       <Spacer className="hidden 2xl:block !h-[5rem] 4xl:!h-[8rem]" />
       <Footer />
     </>

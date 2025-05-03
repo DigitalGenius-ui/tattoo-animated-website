@@ -85,10 +85,10 @@ const MobileGallary = () => {
               }}
             >
               {/* dark bg for the shapes  */}
-              <div className="dark-bg absolute inset-0 bg-bodyBg/95 opacity-0 !z-1" />
+              <div className="dark-bg absolute inset-0 bg-bodyBg/80 opacity-0 !z-1" />
               <div className="w-full h-full relative !z-9 ">
                 <div className="!relative flex-1 w-full h-full flex items-center justify-center">
-                  <div className="opacity-0 gal-text flex items-center flex-col justify-center gap-1 text-[4vw] text-white">
+                  <div className="opacity-0 gal-text flex items-center flex-col justify-center gap-1 text-[6vw] text-white">
                     <h1>Gallerry</h1>
                     <h1>Anshin</h1>
                   </div>

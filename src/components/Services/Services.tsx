@@ -31,11 +31,11 @@ const Services = () => {
         >
           <div
             className="w-[50%] 3xl:w-[60%] aspect-square border border-white/30 rounded-full 
-        absolute -left-[20%] 3xl:-left-[30%]"
+          absolute -left-[20%] 3xl:-left-[30%]"
           />
           <div
             className="w-[80%] mx-auto text-white flex items-center justify-between 
-        gap-[8rem] overflow-hidden"
+          gap-[8rem] overflow-hidden"
           >
             <div className="flex-1 !space-y-12">
               <div className="justify-self-start text-[5vw] text-right font-[--font-playfair] uppercase leading-[1]">

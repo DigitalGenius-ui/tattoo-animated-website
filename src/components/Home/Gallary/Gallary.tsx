@@ -1,7 +1,6 @@
 "use client";
 
 import { useGallaryAnimation } from "@/AnimationHooks/useGallaryAnimation";
-import RotateTextAnimation from "@/utils/RotateTextAnimation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -19,7 +18,7 @@ const images = [
 gsap.registerPlugin(ScrollTrigger);
 
 const Gallary = () => {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const imageRef = useRef<(HTMLDivElement | null)[]>([]);
   const nameRef = useRef(null);
 
@@ -54,45 +53,17 @@ const Gallary = () => {
                   text-5xl !font-[--font-playfair] flex flex-col leading-12 3xl:scale-110 4xl:scale-125 6xl:scale-150 6xl:leading-14"
                 >
                   <h1 className="flex items-center">
-                    <RotateTextAnimation
-                      delay={0.6}
-                      ref={containerRef}
-                      text="g"
-                    />
-                    <RotateTextAnimation
-                      delay={0.9}
-                      ref={containerRef}
-                      text="a"
-                    />
+                    <div className="rotatetext galText">g</div>
+                    <div className="rotatetext galText">a</div>
                   </h1>
                   <h1 className="text-right flex items-end justify-end">
-                    <RotateTextAnimation
-                      delay={1.3}
-                      ref={containerRef}
-                      text="l"
-                    />
-                    <RotateTextAnimation
-                      delay={1.6}
-                      ref={containerRef}
-                      text="a"
-                    />
-                    <RotateTextAnimation
-                      delay={1.9}
-                      ref={containerRef}
-                      text="r"
-                    />
+                    <div className="rotatetext galText">l</div>
+                    <div className="rotatetext galText">a</div>
+                    <div className="rotatetext galText">r</div>
                   </h1>
                   <h1 className="text-right flex items-end justify-end">
-                    <RotateTextAnimation
-                      delay={2.2}
-                      ref={containerRef}
-                      text="i"
-                    />
-                    <RotateTextAnimation
-                      delay={2.5}
-                      ref={containerRef}
-                      text="e"
-                    />
+                    <div className="rotatetext galText">i</div>
+                    <div className="rotatetext galText">e</div>
                   </h1>
                 </div>
                 <h1

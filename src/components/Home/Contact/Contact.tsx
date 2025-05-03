@@ -51,16 +51,20 @@ const Contact = () => {
 
   return (
     <>
-      <div className="!h-[8rem]" />
+      <div className="2xl:hidden text-white !w-[90%] !mx-auto">
+        <h1 className="uppercase text-[3rem] font-[--font-playfair] !pb-[3rem]">
+          contact
+        </h1>
+      </div>
       <section
         ref={container}
-        className="relative hidden 2xl:flex gap-[4rem] 5xl:gap-[8rem] max-h-full !w-[90%] !mx-auto
+        className="relative flex gap-[4rem] 5xl:gap-[8rem] max-h-full !w-[90%] !mx-auto
       !text-white"
       >
-        <div className="flex-1" ref={textRef}>
+        <div className="hidden 2xl:block flex-1" ref={textRef}>
           <div
             className="text-[12vw] uppercase font-[--font-playfair] 
-          leading-40 4xl:leading-52 6xl:leading-72"
+            leading-40 4xl:leading-52 6xl:leading-72"
           >
             <p>Con</p>
             <p className=" text-end">tact</p>
@@ -70,7 +74,10 @@ const Contact = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="!flex-1 !w-[200rem] !space-y-9 4xl:!space-y-[4rem] 4xl:scale-104"
         >
-          <div ref={inputDivRef} className="flex items-center gap-[3rem]">
+          <div
+            ref={inputDivRef}
+            className="flex flex-col md:flex-row items-center gap-[3rem]"
+          >
             <Input
               errors={errors}
               label="Last Name"
@@ -88,7 +95,7 @@ const Contact = () => {
               watch={watch}
             />
           </div>
-          <div className="flex items-center gap-[3rem]">
+          <div className="flex flex-col md:flex-row items-center gap-[3rem]">
             <Input
               errors={errors}
               label="Your Email Address"
@@ -106,7 +113,7 @@ const Contact = () => {
               watch={watch}
             />
           </div>
-          <div className="flex items-center gap-[3rem]">
+          <div className="flex flex-col md:flex-row items-center gap-[3rem]">
             <Input
               errors={errors}
               label="Booking Date"
@@ -126,7 +133,7 @@ const Contact = () => {
               focused
             />
           </div>
-          <div className="flex items-center gap-[3rem]">
+          <div className="flex flex-col md:flex-row items-center gap-[3rem]">
             <Input
               errors={errors}
               label="Number of tattoos at this appointment"
@@ -144,9 +151,11 @@ const Contact = () => {
               watch={watch}
             />
           </div>
-          <div className="flex items-center gap-[3rem] text-white/60">
+          <div className="flex flex-col md:flex-row md:items-center gap-[3rem] text-white/60">
             <div className="flex-1 !space-y-3">
-              <p className="!text-[1vw]">Is this your first request?</p>
+              <p className="!text-[1rem] 2xl:!text-[1vw]">
+                Is this your first request?
+              </p>
               <div className="flex items-center gap-[4rem]">
                 <RadioInput
                   errors={errors}
@@ -165,7 +174,9 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex-1 !space-y-3">
-              <p className="!text-[1vw]">Have I ever tattooed you?</p>
+              <p className="!text-[1rem] 2xl:!text-[1vw]">
+                Have I ever tattooed you?
+              </p>
               <div className="flex items-center gap-[4rem]">
                 <RadioInput
                   errors={errors}
@@ -193,7 +204,7 @@ const Contact = () => {
               value="yes"
               label={false}
             />
-            <p className="text-[1vw]">
+            <p className="!text-[1rem] 2xl:!text-[1vw]">
               I have read and accepted the privacy policy.*
             </p>
           </div>
