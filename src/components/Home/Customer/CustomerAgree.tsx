@@ -1,14 +1,11 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useRef } from "react";
 import AnimatedImages from "@/utils/AnimatedImages";
 import MobileCustomer from "./MobileCustomer";
 import { customerImages } from "./data";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useCustomerAnimation } from "@/AnimationHooks/useCustomerAnimation";
 
 const CustomerAgree = () => {
   const container = useRef(null);
@@ -21,62 +18,16 @@ const CustomerAgree = () => {
 
   const timeline = useRef<gsap.core.Timeline>({} as gsap.core.Timeline);
 
-  useGSAP(
-    () => {
-      gsap.set(text1.current, { x: 100, opacity: 0 });
-      gsap.set(text2.current, { x: -100, opacity: 0 });
-      gsap.set(postRef.current, { y: 100, opacity: 0 });
-      gsap.set(".img1", { scale: 1.3 });
+  useCustomerAnimation({
+    container,
+    text1,
+    text2,
+    postRef,
+    svgParent,
+    svgRef,
+    timeline,
+  });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container.current,
-          start: "-70% top",
-          toggleActions: "play none none none",
-        },
-      });
-      tl.to(text1.current, { x: 0, opacity: 1, duration: 1 });
-      tl.to(text2.current, { x: 0, opacity: 1, duration: 1 });
-      tl.to(postRef.current, { y: 0, opacity: 1, duration: 1, delay: -1.2 });
-
-      const tl2 = gsap.timeline({
-        scrollTrigger: {
-          trigger: svgParent.current,
-          start: `top top`,
-          end: "+=1600",
-          scrub: true,
-          pin: true,
-        },
-      });
-
-      timeline.current = tl2;
-
-      tl2.to(
-        svgRef.current,
-        {
-          strokeDashoffset: 0,
-          duration: 1.5,
-        },
-        "a"
-      );
-
-      tl2.fromTo(
-        ".texts",
-        {
-          yPercent: 0,
-          duration: 1,
-          stagger: 0.2,
-        },
-        {
-          yPercent: -200,
-          duration: 1,
-          stagger: 0.2,
-        },
-        "a"
-      );
-    },
-    { scope: container }
-  );
   return (
     <>
       <MobileCustomer />

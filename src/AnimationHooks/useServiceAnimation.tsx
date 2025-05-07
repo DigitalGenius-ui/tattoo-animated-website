@@ -85,29 +85,3 @@ export const useServiceAnimation = ({
     timeline.current = tl2;
   }, []);
 };
-
-export const useMobileServiceAnimation = ({
-  container,
-}: {
-  container: React.RefObject<null>;
-}) => {
-  useGSAP(() => {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: container.current,
-          start: "top top",
-          end: "+=1200",
-          scrub: true,
-        },
-      })
-      .to(
-        ".hero-mobile-bg",
-        {
-          y: 400,
-          scale: 1.4,
-        },
-        "a"
-      );
-  }, []);
-};

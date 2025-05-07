@@ -1,18 +1,14 @@
 "use client";
 
 import { TextAnimate } from "@/components/magicui/text-animate";
-import { useMobileServiceAnimation } from "@/AnimationHooks/useServiceAnimation";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useMobileHeroAnimation } from "@/AnimationHooks/useHeroAnimation";
 
 const MobileHero = () => {
   const container = useRef(null);
   const textRef = useRef(null);
 
-  useMobileServiceAnimation({ container });
+  useMobileHeroAnimation({ container });
   return (
     <section
       ref={container}

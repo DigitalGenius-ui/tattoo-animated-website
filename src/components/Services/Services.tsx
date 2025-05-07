@@ -1,13 +1,9 @@
 "use client";
 
 import AnimatedImages from "@/utils/AnimatedImages";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useRef } from "react";
 import MobileService from "./MobileService";
 import { useServiceAnimation } from "@/AnimationHooks/useServiceAnimation";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const images = ["/service2.jpg", "/service1.jpg"];
 

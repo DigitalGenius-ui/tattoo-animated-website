@@ -1,15 +1,11 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import React, { useRef } from "react";
 import { TextAnimate } from "../../magicui/text-animate";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import gsap from "gsap";
 import MobileHero from "./MobileHero";
 import "./hero.css";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useHeroAnimation } from "@/AnimationHooks/useHeroAnimation";
 
 const Hero = () => {
   const container = useRef(null);
@@ -19,69 +15,7 @@ const Hero = () => {
   const elliRef = useRef(null);
   const elliBgRef = useRef(null);
 
-  useGSAP(() => {
-    gsap.set(plantRef.current, { y: 60, opacity: 0 });
-    gsap.set(elliRef.current, { y: 60, opacity: 0 });
-    gsap.set(elliBgRef.current, { y: 40, opacity: 0 });
-
-    gsap.to(plantRef.current, {
-      y: 0,
-      opacity: 1,
-      delay: 1,
-    });
-    gsap.to(elliRef.current, {
-      y: 0,
-      opacity: 1,
-      delay: 0.8,
-    });
-    gsap.to(elliBgRef.current, {
-      y: 0,
-      opacity: 1,
-      delay: 0.6,
-    });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: container.current,
-        start: "top top",
-        end: "80% 50%",
-        scrub: true,
-      },
-    });
-
-    tl.to(
-      textRef.current,
-      {
-        opacity: 0,
-      },
-      "a"
-    );
-    tl.to(
-      plantRef.current,
-      {
-        scale: 1.2,
-        y: 850,
-      },
-      "a"
-    );
-    tl.to(
-      elliBgRef.current,
-      {
-        scale: 1.2,
-        y: 750,
-      },
-      "a"
-    );
-
-    tl.to(
-      elliRef.current,
-      {
-        scale: 1.2,
-        y: 550,
-      },
-      "a"
-    );
-  }, []);
+  useHeroAnimation({ container, plantRef, textRef, elliRef, elliBgRef });
   return (
     <>
       <MobileHero />

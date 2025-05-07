@@ -1,8 +1,6 @@
 "use client";
 
 import { useGallaryAnimation } from "@/AnimationHooks/useGallaryAnimation";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import React, { useRef } from "react";
 import MobileGallary from "./MobileGallary";
@@ -14,8 +12,6 @@ const images = [
   { src: "/gallery3.jpg", col: "col-span-2", row: "row-span-1" },
   { src: "/gallery5.jpg", col: "col-span-4", row: "row-span-1" },
 ];
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Gallary = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);

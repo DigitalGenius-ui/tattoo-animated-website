@@ -7,27 +7,14 @@ import "./header.css";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Image from "next/image";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import MobileHeader from "./MobileHeader";
+import useHeaderAnimation from "@/AnimationHooks/useHeaderAnimation";
 
 const Header = () => {
   const pathName = usePathname();
 
   const container = useRef(null);
-
-  useGSAP(
-    () => {
-      gsap.set(container.current, { y: -100, opacity: 0 });
-      gsap.to(container.current, {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 1.4,
-      });
-    },
-    { scope: container }
-  );
+  useHeaderAnimation({ container });
   return (
     <>
       <MobileHeader />

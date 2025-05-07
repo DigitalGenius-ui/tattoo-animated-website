@@ -2,13 +2,9 @@
 
 import { useMobileGallaryAnimation } from "@/AnimationHooks/useGallaryAnimation";
 import Spacer from "@/utils/Spacer";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import React, { useRef } from "react";
 import "./mobileGallary.css";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const images1 = [
   {
@@ -96,14 +92,14 @@ const MobileGallary = () => {
                     width={400}
                     height={100}
                     src="/footer/lineTop.svg"
-                    alt="line-top"
+                    alt="line"
                     className="line1 absolute"
                   />
                   <Image
                     width={400}
                     height={100}
                     src="/footer/lineBottom.svg"
-                    alt="line-top"
+                    alt="line"
                     className="line2 absolute"
                   />
                   <div className="absolute shape1 size-[15rem] s:size-[18rem] borderColor" />

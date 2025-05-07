@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair } from "next/font/google";
 import "./globals.css";
 import ShowHeader from "@/utils/ShowHeader";
+import Footer from "@/components/Home/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default async function RootLayout({
       >
         <ShowHeader />
         {children}
+        <Footer />
       </body>
     </html>
   );

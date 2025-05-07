@@ -4,40 +4,15 @@ import React, { useRef } from "react";
 import { customerImages } from "./data";
 import clsx from "clsx";
 import { data } from "./data";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Spacer from "@/utils/Spacer";
 import Image from "next/image";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useCustomerMobileAnimation } from "@/AnimationHooks/useCustomerAnimation";
 
 const MobileCustomer = () => {
   const container = useRef(null);
   const imagesRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  useGSAP(() => {
-    const targets = imagesRef.current.slice(1);
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: container.current,
-        start: `top top`,
-        end: "bottom bottom",
-        scrub: true,
-      },
-    });
-
-    tl.to(
-      targets,
-      {
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-        scale: 1.2,
-        stagger: 0.8,
-      },
-      "a"
-    );
-  }, []);
+  useCustomerMobileAnimation({ container, imagesRef });
   return (
     <section className="2xl:hidden">
       <h1 className="uppercase font-[--font-playfair] text-white text-center text-[10vw]">

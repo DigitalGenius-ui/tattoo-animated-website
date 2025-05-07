@@ -8,12 +8,10 @@ import Header from "./Header/Header";
 import Lenis from "lenis";
 import CustomerAgree from "./Customer/CustomerAgree";
 import Contact from "./Contact/Contact";
-import Footer from "./Footer/Footer";
 import Spacer from "@/utils/Spacer";
-
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "lenis/dist/lenis.css";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Home = () => {
   useEffect(() => {
@@ -47,9 +45,7 @@ const Home = () => {
       <CustomerAgree />
       <Spacer className="!h-[10rem]" />
       <Contact />
-      <Spacer className="!h-[10rem]" />
-      <Spacer className="hidden 2xl:block !h-[5rem] 4xl:!h-[8rem]" />
-      <Footer />
+      <Spacer className="!h-[10rem] 2xl:block 4xl:!h-[8rem]" />
     </>
   );
 };

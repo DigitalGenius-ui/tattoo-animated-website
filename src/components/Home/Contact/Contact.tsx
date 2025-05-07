@@ -8,35 +8,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { conactFormSchema } from "@/schemas/ContactSchema";
 import { z } from "zod";
 import AnimatedButton from "./AnimatedButton";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useContactAnimation from "@/AnimationHooks/useContactAnimation";
 
 export type contactInputType = z.input<typeof conactFormSchema>;
-gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const container = useRef<HTMLDivElement | null>(null);
   const textRef = useRef(null);
   const inputDivRef = useRef(null);
 
-  useGSAP(() => {
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: container.current,
-        start: "top top",
-        end: () =>
-          `+=${
-            container.current &&
-            container?.current.scrollHeight - window.innerHeight
-          }`,
-        pin: textRef.current,
-        pinSpacing: false,
-        scrub: true,
-      },
-    });
-  }, []);
-
+  useContactAnimation({ container, textRef });
   const {
     register,
     handleSubmit,
