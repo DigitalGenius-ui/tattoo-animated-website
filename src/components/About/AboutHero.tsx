@@ -2,20 +2,15 @@
 
 import { useRef } from "react";
 import { TextAnimate } from "../magicui/text-animate";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { useAboutHeroAnimation } from "@/AnimationHooks/useAboutAnimations";
 
 const AboutHero = () => {
+  const container = useRef(null);
   const textRef = useRef(null);
-  useGSAP(() => {
-    gsap.fromTo(
-      ".aboutText",
-      { opacity: 0, y: 30, stagger: 0.2, duration: 1 },
-      { opacity: 1, y: 1, stagger: 0.2, duration: 1 }
-    );
-  });
+
+  useAboutHeroAnimation({ container });
   return (
-    <section className="hero w-full h-screen relative">
+    <section ref={container} className="hero w-full h-screen relative">
       <div
         className="absolute inset-0"
         style={{
@@ -38,11 +33,11 @@ const AboutHero = () => {
             2xl:items-center 2xl:w-auto 2xl:justify-end"
         >
           <div
-            className="h-full flex flex-col justify-end text-white !pl-4
+            className="aboutHeroText h-full flex flex-col justify-end text-white !pl-4
             text-7xl
             s:text-8xl
             md:text-9xl
-            3xl:text-[11vw]
+            3xl:!text-[11vw]
             md:w-full"
           >
             <TextAnimate
@@ -69,7 +64,7 @@ const AboutHero = () => {
           </div>
         </div>
         <div
-          className="flex-1 flex darkWhite w-full justify-end items-end !pr-5
+          className="aboutTexts flex-1 flex darkWhite w-full justify-end items-end !pr-5
             2xl:!pr-30"
         >
           <div

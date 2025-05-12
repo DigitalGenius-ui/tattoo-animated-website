@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair } from "next/font/google";
 import "./globals.css";
 import ShowHeader from "@/utils/ShowHeader";
-import Footer from "@/components/Home/Footer/Footer";
+import ScrollEase from "@/components/Wrapper/ScrollEase";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,9 +35,10 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
       >
-        <ShowHeader />
-        {children}
-        <Footer />
+        <ScrollEase>
+          <ShowHeader />
+          {children}
+        </ScrollEase>
       </body>
     </html>
   );

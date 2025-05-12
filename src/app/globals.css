@@ -56,6 +56,14 @@ body {
   overflow-x: hidden !important;
 }
 
+.darkBg {
+  background-color: var(--bodyBackground) !important;
+}
+
+.headingFont {
+  font-family: var(--font-playfair);
+}
+
 .rotatetext {
   @apply rotate-y-50 tracking-wider;
 }

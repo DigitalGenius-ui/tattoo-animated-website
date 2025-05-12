@@ -10,7 +10,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Footer = () => {
+type FooterProps = {
+  title: string;
+  path: string;
+};
+
+const Footer = ({ title, path }: FooterProps) => {
   const router = useRouter();
   const container = useRef(null);
   useFooterAnimation({ container });
@@ -77,7 +82,7 @@ const Footer = () => {
       />
       <div className="absolute inset-0 flex items-center justify-center">
         <div
-          onClick={() => router.push("/about")}
+          onClick={() => router.push(path)}
           className="relative group cursor-pointer w-[90%] 2xl:w-[50rem] 3xl:w-[70rem] 5xl:w-[100rem] text-center"
         >
           <p
@@ -94,7 +99,7 @@ const Footer = () => {
             className="uppercase text-white text-[16vw]
           2xl:text-9xl 4xl:text-[11rem] 6xl:text-[15rem] font-[--font-playfair] z-10 relative"
           >
-            about me
+            {title}
           </h1>
         </div>
       </div>

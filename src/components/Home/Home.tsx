@@ -1,38 +1,16 @@
-"use client";
-
-import React, { useEffect } from "react";
+import React from "react";
 import Hero from "./Hero/Hero";
 import Services from "../Services/Services";
 import Gallary from "./Gallary/Gallary";
 import Header from "./Header/Header";
-import Lenis from "lenis";
 import CustomerAgree from "./Customer/CustomerAgree";
 import Contact from "./Contact/Contact";
 import Spacer from "@/utils/Spacer";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "lenis/dist/lenis.css";
-import gsap from "gsap";
+import Footer from "./Footer/Footer";
 
 const Home = () => {
-  useEffect(() => {
-    const lenis = new Lenis({ autoRaf: true });
-
-    lenis.on("scroll", ScrollTrigger.update);
-
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-
-    gsap.ticker.lagSmoothing(0);
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }, []);
   return (
-    <>
+    <section className="darkBg">
       <div className="bg-no-repeat bg-cover hero-bg relative z-10">
         <Header />
         <Hero />
@@ -46,7 +24,8 @@ const Home = () => {
       <Spacer className="!h-[10rem]" />
       <Contact />
       <Spacer className="!h-[10rem] 2xl:block 4xl:!h-[8rem]" />
-    </>
+      <Footer title="about me" path="/about" />
+    </section>
   );
 };
 

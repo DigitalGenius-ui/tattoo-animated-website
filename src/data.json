@@ -1,8 +1,8 @@
 {
   "nav": [
     { "name": "start", "path": "/" },
-    { "name": "about me", "path": "/about-me" },
-    { "name": "galary", "path": "/galary" },
+    { "name": "about me", "path": "/about" },
+    { "name": "galary", "path": "/gallary" },
     { "name": "faq", "path": "/faq" }
   ]
 }
