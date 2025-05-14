@@ -30,7 +30,6 @@ export const useCustomerAnimation = ({
       gsap.set(text1.current, { x: 100, opacity: 0 });
       gsap.set(text2.current, { x: -100, opacity: 0 });
       gsap.set(postRef.current, { y: 100, opacity: 0 });
-      gsap.set(".img1", { scale: 1.3 });
 
       const tl = gsap.timeline({
         scrollTrigger: {

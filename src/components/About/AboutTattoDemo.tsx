@@ -2,7 +2,6 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import Image from "next/image";
 import React, { useRef } from "react";
 
 const AboutTattoDemo = () => {
@@ -30,14 +29,19 @@ const AboutTattoDemo = () => {
   return (
     <section
       ref={container}
-      className="h-[100vh] 2xl:h-[200vh] flex items-center justify-center !relative"
+      className="w-full h-[100vh] 2xl:h-[200vh] !relative flex items-center justify-center !overflow-hidden"
     >
-      <Image
-        width={1000}
-        height={1000}
-        src={"/about/das-studio6.jpg"}
-        alt="about-tatto-demo"
-        className="aboutTattoDemoImg fixed inset-0 w-full h-[140vh] object-cover -z-1"
+      <div
+        className="md:hidden lg:block aboutTattoDemoImg bg-[url(/about/das-studio6.jpg)] -z-1
+        bg-cover bg-center bg-no-repeat fixed inset-0 w-full h-[140vh]"
+      />
+      <div
+        className="s:hidden md:block aboutTattoDemoImg bg-[url(/about/das-studio6-tablet.jpg)] -z-1
+        bg-cover bg-center bg-no-repeat fixed inset-0 w-full h-[140vh]"
+      />
+      <div
+        className="block s:hidden aboutTattoDemoImg bg-[url(/about/das-studio6-mobile.jpg)] -z-1
+        bg-cover bg-center bg-no-repeat fixed inset-0 w-full h-[140vh]"
       />
       <video
         muted

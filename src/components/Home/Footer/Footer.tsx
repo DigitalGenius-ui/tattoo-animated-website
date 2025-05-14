@@ -5,10 +5,6 @@ import React, { useRef } from "react";
 import "./footer.css";
 import useFooterAnimation from "@/AnimationHooks/useFooterAnimation";
 import { useRouter } from "next/navigation";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 type FooterProps = {
   title: string;
@@ -97,7 +93,7 @@ const Footer = ({ title, path }: FooterProps) => {
           />
           <h1
             className="uppercase text-white text-[16vw]
-          2xl:text-9xl 4xl:text-[11rem] 6xl:text-[15rem] font-[--font-playfair] z-10 relative"
+          2xl:text-9xl 4xl:text-[11rem] 6xl:text-[15rem] font-[--font-playfair] z-7 relative"
           >
             {title}
           </h1>

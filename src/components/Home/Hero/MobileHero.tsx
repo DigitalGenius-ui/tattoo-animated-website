@@ -15,7 +15,7 @@ const MobileHero = () => {
       className="hero 2xl:hidden min-h-screen w-full text-white relative overflow-hidden"
     >
       <div className="hero-mobile-bg absolute inset-0 z-1" />
-      <div className="bg-linear flex items-end justify-center absolute left-0 right-0 bottom-0 z-10">
+      <div className="bg-linear flex items-end justify-center absolute left-0 right-0 bottom-0 z-7">
         <TextAnimate
           ref={textRef}
           className="font-[--font-playfair] uppercase text-center text-[15vw] xs:text-[8vw] 

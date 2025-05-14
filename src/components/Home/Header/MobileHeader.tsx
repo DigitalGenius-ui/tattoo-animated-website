@@ -9,9 +9,13 @@ import Link from "next/link";
 import clsx from "clsx";
 import data from "@/data.json";
 import { usePathname } from "next/navigation";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const MobileHeader = () => {
   const [toggle, setToggle] = useState(false);
+  const container = useRef<HTMLDivElement>(null);
   const pathName = usePathname();
 
   const clickRef = useRef<gsap.core.Timeline>({} as gsap.core.Timeline);
@@ -32,14 +36,14 @@ const MobileHeader = () => {
         ".right-line",
         {
           width: 0,
-          rigth: 0,
+          right: 0,
           duration: 1,
           ease: "power4.inOut",
         },
         "a"
       )
       .to(
-        ".closeBtn",
+        ".headerCloseBtn",
         {
           scale: 1,
           duration: 1,
@@ -76,7 +80,7 @@ const MobileHeader = () => {
     }
   }, [toggle]);
   return (
-    <header className="2xl:hidden absolute top-0 left-0 right-0">
+    <header ref={container} className="2xl:hidden absolute inset-0">
       <div className="w-[90%] !mx-auto !h-[100px] !flex !items-center !justify-between text-white">
         <h1 className="text-[2.5rem] font-[--font-playfair] z-10">WT</h1>
         {/* humberger menu  */}
@@ -90,12 +94,15 @@ const MobileHeader = () => {
           </div>
           <button
             onClick={() => setToggle(false)}
-            className="closeBtn absolute scale-0"
+            className="headerCloseBtn absolute scale-0"
           >
             <X size={30} />
           </button>
         </div>
-        <nav className="navMenu fixed inset-0 bg-neutral-700 z-9 translate-x-full">
+        <nav
+          style={{ transform: "translateX(100%)" }}
+          className="navMenu fixed inset-0 bg-neutral-700 z-8"
+        >
           <div className="h-full relative flex flex-col gap-4 items-center justify-center font-[--font-playfair]">
             {data.nav.map((item) => (
               <div

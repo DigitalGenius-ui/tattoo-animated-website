@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair } from "next/font/google";
 import "./globals.css";
 import ShowHeader from "@/utils/ShowHeader";
-import ScrollEase from "@/components/Wrapper/ScrollEase";
+import ScrollEase from "@/Wrapper/ScrollEase";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

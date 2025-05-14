@@ -6,6 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import "lenis/dist/lenis.css";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const ScrollEase = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const lenis = new Lenis({ autoRaf: true });

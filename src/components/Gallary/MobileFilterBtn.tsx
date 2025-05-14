@@ -43,23 +43,22 @@ const MobileFilterBtn = ({ handleFilter }: GallaryFilterBtnType) => {
   const openFilterRef = useRef<gsap.core.Timeline>({} as gsap.core.Timeline);
 
   useGSAP(() => {
-    gsap.set(".category", { x: "100%", opacity: 0 });
     openFilterRef.current = gsap
-      .timeline({ paused: true })
-      .to(".line", {
-        width: "50%",
-        stagger: 0.1,
-        duration: 0.5,
-        delay: 0.4,
-        ease: "power4.inOut",
-      })
+      .timeline()
       .to(".category", {
         x: 0,
         duration: 1.75,
         opacity: 1,
         ease: "power4.inOut",
+      })
+      .to(".line2", {
+        width: "50%",
+        stagger: 0.1,
+        duration: 0.5,
+        ease: "power4.inOut",
       });
   }, []);
+
   useEffect(() => {
     if (openFilter) {
       openFilterRef.current.play();
@@ -82,7 +81,10 @@ const MobileFilterBtn = ({ handleFilter }: GallaryFilterBtnType) => {
           categories
         </h1>
       </button>
-      <div className="category darkBg !fixed !inset-0 !z-20">
+      <div
+        style={{ transform: "translateX(100%)" }}
+        className="category darkBg !fixed !inset-0 !z-20"
+      >
         <button
           onClick={() => setOpenFilter(false)}
           style={{
@@ -91,8 +93,8 @@ const MobileFilterBtn = ({ handleFilter }: GallaryFilterBtnType) => {
           className="size-[12vw] bg-neutral-800 absolute top-5 right-5 rounded-full
             flex items-center justify-center cursor-pointer hover:rotate-90"
         >
-          <span className="line absolute w-0 h-[1px] bg-white rotate-45" />
-          <span className="line absolute w-0 h-[1px] bg-white -rotate-45" />
+          <span className="line2 absolute w-0 h-[1px] bg-white rotate-45" />
+          <span className="line2 absolute w-0 h-[1px] bg-white -rotate-45" />
         </button>
         <h1
           className="text-[clamp(2rem,10vw,5rem)] tracking-wide darkWhite 

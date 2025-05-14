@@ -51,9 +51,14 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden !important;
+}
+
 body {
   background-color: var(--bodyBackground) !important;
   overflow-x: hidden !important;
+  position: relative !important;
 }
 
 .darkBg {

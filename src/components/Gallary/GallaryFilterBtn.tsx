@@ -88,18 +88,18 @@ const GallaryFilterBtn = ({
         };
       });
 
-      setLines(
-        newLines.filter(
-          (
-            line
-          ): line is {
-            x1: number;
-            y1: number;
-            angle: number;
-            length: number;
-          } => line !== null
-        )
+      const filteredLines = newLines.filter(
+        (
+          line
+        ): line is {
+          x1: number;
+          y1: number;
+          angle: number;
+          length: number;
+        } => line !== null
       );
+
+      setLines(filteredLines);
     };
 
     updateLines();
@@ -123,7 +123,7 @@ const GallaryFilterBtn = ({
               line && (
                 <div
                   key={i}
-                  className="absolute h-[1px] bg-white/30"
+                  className="filterLine absolute h-[1px] bg-white/30"
                   style={{
                     top: `${line.y1}px`,
                     left: `${line.x1}px`,
@@ -141,7 +141,7 @@ const GallaryFilterBtn = ({
               line && (
                 <div
                   key={i}
-                  className="absolute h-[1px] bg-white"
+                  className="hoverLine absolute h-[1px] bg-white"
                   style={{
                     top: `${line.y1}px`,
                     left: `${line.x1}px`,

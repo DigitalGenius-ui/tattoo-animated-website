@@ -19,7 +19,7 @@ const MobileCustomer = () => {
         testimonials
       </h1>
       <Spacer className="!h-[8rem]" />
-      <div ref={container} className="relative">
+      <div ref={container} className="!relative">
         <div className="w-full h-[35vh] sticky top-0">
           {customerImages.map((img, i) => (
             <div
@@ -45,7 +45,7 @@ const MobileCustomer = () => {
             </div>
           ))}
         </div>
-        <div className="text-white w-[80%] overflow-hidden !mx-auto -z-1 relative">
+        <div className="text-white w-[80%] overflow-hidden !mx-auto z-1 relative">
           {data.map((item) => (
             <div
               key={item.name}
