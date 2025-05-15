@@ -45,8 +45,8 @@ const AboutTattoDemo = () => {
       />
       <video
         muted
-        // loop
-        // autoPlay
+        loop
+        autoPlay
         playsInline
         className="w-[50%] 2xl:w-[25vw] relative z-10"
       >

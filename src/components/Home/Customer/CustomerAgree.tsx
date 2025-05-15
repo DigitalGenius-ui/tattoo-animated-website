@@ -1,6 +1,5 @@
 "use client";
 
-import gsap from "gsap";
 import React, { useRef } from "react";
 import AnimatedImages from "@/utils/AnimatedImages";
 import MobileCustomer from "./MobileCustomer";
