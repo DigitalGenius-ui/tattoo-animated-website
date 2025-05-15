@@ -14,13 +14,13 @@ const MobileCustomer = () => {
 
   useCustomerMobileAnimation({ container, imagesRef });
   return (
-    <section className="2xl:hidden">
+    <section className="2xl:hidden !overflow-x-visible">
       <h1 className="uppercase font-[--font-playfair] text-white text-center text-[10vw]">
         testimonials
       </h1>
       <Spacer className="!h-[8rem]" />
       <div ref={container} className="!relative">
-        <div className="w-full h-[35vh] sticky top-0">
+        <div className="w-full h-[35vh] sticky top-0 z-2 !overflow-hidden">
           {customerImages.map((img, i) => (
             <div
               ref={(el) => {

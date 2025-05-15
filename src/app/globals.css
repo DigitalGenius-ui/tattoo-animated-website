@@ -57,8 +57,6 @@ html {
 
 body {
   background-color: var(--bodyBackground) !important;
-  overflow-x: hidden !important;
-  position: relative !important;
 }
 
 .darkBg {

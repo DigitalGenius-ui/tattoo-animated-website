@@ -9,7 +9,7 @@ import React from "react";
 
 const AboutPage = () => {
   return (
-    <>
+    <section className="!overflow-x-hidden">
       <AboutHero />
       <AboutDetails />
       <Spacer className="darkBg h-[8rem] 2xl:!h-[15rem] 6xl:h-[20rem]" />
@@ -20,7 +20,7 @@ const AboutPage = () => {
       <AboutFindTatto />
       <Spacer className="darkBg h-[8rem] md:!h-[10rem] 4xl:h-0 5xl:h-[8rem] 6xl:h-[20rem]" />
       <Footer title="gallary" path="/gallary" />
-    </>
+    </section>
   );
 };
 

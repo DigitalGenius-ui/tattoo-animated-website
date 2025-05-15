@@ -36,9 +36,9 @@ const AboutStudio = () => {
         </BlurFade>
         <div
           className="text-white absolute headingFont uppercase
-            z-10 text-[13vw] -top-15 leading-10 left-[40%]
-            md:leading-24 md:-top-36 md:left-[45%]
-            lg:!leading-[10vw] lg:!-top-[14vw]"
+            z-10 text-[13vw] -top-15 leading-10 left-[35%]
+            md:leading-24 md:-top-36 md:left-[40%]
+            lg:!leading-[11vw] lg:!-top-[14vw]"
         >
           <h1>Das</h1>
           <h2 className="!ml-[3rem]">Studio</h2>
