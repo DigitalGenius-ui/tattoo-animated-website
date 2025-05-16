@@ -5,10 +5,18 @@ import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import "lenis/dist/lenis.css";
+import { usePathname } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ScrollEase = ({ children }: { children: React.ReactNode }) => {
+  const pathName = usePathname();
+
+  useEffect(() => {
+    if (pathName) {
+      ScrollTrigger.refresh();
+    }
+  }, [pathName]);
   useEffect(() => {
     const lenis = new Lenis({ autoRaf: true });
 
