@@ -10,7 +10,7 @@ const AboutHero = () => {
 
   useAboutHeroAnimation({ container });
   return (
-    <section ref={container} className="hero w-full h-screen relative">
+    <section ref={container} className="w-full h-screen relative">
       <div
         className="absolute inset-0"
         style={{

@@ -2,9 +2,9 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
-const useHeaderAnimation = ({
+export const useHeaderAnimation = ({
   container,
 }: {
   container: React.RefObject<null>;
@@ -23,4 +23,57 @@ const useHeaderAnimation = ({
   );
 };
 
-export default useHeaderAnimation;
+export const useHeaderAnimationMobile = ({ toggle }: { toggle: boolean }) => {
+  const clickRef = useRef<gsap.core.Timeline>({} as gsap.core.Timeline);
+  useGSAP(() => {
+    gsap.set(".navMenu", { translateX: "100%" });
+    clickRef.current = gsap
+      .timeline({ paused: true })
+      .to(
+        ".left-line",
+        {
+          width: 0,
+          left: 0,
+          duration: 1,
+          ease: "power4.inOut",
+        },
+        "a"
+      )
+      .to(
+        ".right-line",
+        {
+          width: 0,
+          right: 0,
+          duration: 1,
+          ease: "power4.inOut",
+        },
+        "a"
+      )
+      .to(
+        ".headerCloseBtn",
+        {
+          scale: 1,
+          duration: 1,
+          ease: "power4.inOut",
+        },
+        "a"
+      )
+      .to(
+        ".navMenu",
+        {
+          translateX: 0,
+          duration: 1,
+          ease: "power4.inOut",
+        },
+        "a"
+      );
+  }, []);
+
+  useEffect(() => {
+    if (toggle) {
+      clickRef.current.play();
+    } else {
+      clickRef.current.reverse();
+    }
+  }, [toggle]);
+};

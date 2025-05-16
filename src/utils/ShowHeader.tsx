@@ -1,6 +1,6 @@
 "use client";
 
-import Header from "@/components/Home/Header/Header";
+import Header from "@/components/Header/Header";
 import { usePathname } from "next/navigation";
 import React from "react";
 

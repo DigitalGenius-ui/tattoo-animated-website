@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "./Hero/Hero";
 import Services from "../Services/Services";
 import Gallary from "./Gallary/Gallary";
-import Header from "./Header/Header";
+import Header from "../Header/Header";
 import CustomerAgree from "./Customer/CustomerAgree";
 import Contact from "./Contact/Contact";
 import Spacer from "@/utils/Spacer";

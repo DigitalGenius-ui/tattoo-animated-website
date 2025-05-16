@@ -2,6 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React from "react";
 
 type GallaryAnimationProps = {
@@ -244,6 +245,7 @@ export const useMobileGallaryAnimation = ({
 
     return () => {
       tl.scrollTrigger?.kill();
+      ScrollTrigger.refresh();
     };
   }, []);
 };

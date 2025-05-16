@@ -36,7 +36,7 @@ const Gallary = () => {
   }, [selectedImage]);
 
   return (
-    <section className="hero !w-[90%] !mx-auto !relative">
+    <section className="!w-[90%] !mx-auto !relative">
       <div className="!mt-[8rem]">
         <h1 className="text-center text-white uppercase text-[8vw] font-[--font-playfair]">
           gallary

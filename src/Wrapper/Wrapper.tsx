@@ -5,18 +5,10 @@ import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import "lenis/dist/lenis.css";
-import { usePathname } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ScrollEase = ({ children }: { children: React.ReactNode }) => {
-  const pathName = usePathname();
-
-  useEffect(() => {
-    if (pathName) {
-      ScrollTrigger.refresh();
-    }
-  }, [pathName]);
+const Wrapper = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const lenis = new Lenis({ autoRaf: true });
 
@@ -37,4 +29,4 @@ const ScrollEase = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 
-export default ScrollEase;
+export default Wrapper;

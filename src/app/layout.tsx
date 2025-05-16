@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair } from "next/font/google";
 import "./globals.css";
 import ShowHeader from "@/utils/ShowHeader";
-import ScrollEase from "@/Wrapper/ScrollEase";
+import Wrapper from "@/Wrapper/Wrapper";
+import ScrollUpButton from "@/utils/ScrollUpButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,10 +36,11 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
       >
-        <ScrollEase>
+        <Wrapper>
           <ShowHeader />
           {children}
-        </ScrollEase>
+          <ScrollUpButton />
+        </Wrapper>
       </body>
     </html>
   );

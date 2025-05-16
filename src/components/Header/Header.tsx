@@ -8,10 +8,12 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Image from "next/image";
 import MobileHeader from "./MobileHeader";
-import useHeaderAnimation from "@/AnimationHooks/useHeaderAnimation";
+import { useHeaderAnimation } from "@/AnimationHooks/useHeaderAnimation";
+import { useScrollDirection } from "@/Hooks/useScrollDirection";
 
 const Header = () => {
   const pathName = usePathname();
+  const { scrollDirection } = useScrollDirection(30);
 
   const container = useRef(null);
   useHeaderAnimation({ container });
@@ -20,11 +22,16 @@ const Header = () => {
       <MobileHeader />
       <header
         ref={container}
-        className="hidden 2xl:flex items-center text-white capitalize z-10 
-        absolute top-0 left-0 right-0"
+        className={clsx(
+          `hidden 2xl:flex items-center text-white capitalize z-10 
+        fixed top-0 left-0 right-0 transition-all duration-500 ease-in-out`,
+          scrollDirection === "down" ? "!-top-[100px]" : "!top-0"
+        )}
       >
         <div className="!flex !items-center !justify-between w-[90%] !mx-auto h-[6vw]">
-          <h1 className="text-[3vw] font-[--font-playfair]">WT</h1>
+          <Link href="/">
+            <h1 className="text-[3vw] font-[--font-playfair]">WT</h1>
+          </Link>
           <nav className="flex items-center gap-4">
             {data.nav.map((item) => (
               <div key={item.name} className="relative text-[1.2vw]">
