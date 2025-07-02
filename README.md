@@ -49,6 +49,6 @@
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/yourusername/tattoo-animated-website.git
+git clone https://github.com/DigitalGenius-ui/tattoo-animated-website.git
 cd tattoo-animated-website
 
