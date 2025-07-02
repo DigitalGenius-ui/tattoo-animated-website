@@ -5,7 +5,19 @@ import AboutStudio from "@/components/About/AboutStudio";
 import AboutTattoDemo from "@/components/About/AboutTattoDemo";
 import Footer from "@/components/Home/Footer/Footer";
 import Spacer from "@/utils/Spacer";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: ` Discover bold, custom tattoo artistry at Tatto Youth — a 
+  modern tattoo company specializing in unique designs, fine-line work, 
+  and immersive experiences. Explore our portfolio through a visually stunning, 
+  scroll-animated website built with cutting-edge web technologies. 
+  Whether you're seeking your first ink or adding to your collection, our 
+  professional artists turn your vision into skin-deep masterpieces. 
+  Located in Melbourne. Book your session today!`,
+};
 
 const AboutPage = () => {
   return (
