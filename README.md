@@ -2,7 +2,7 @@
 
 <img src="./public/demo.png" alt="banner"/>
 
-# 🖋️ Tattoo Animated Website
+# Tattoo Animated Website
 
 > A modern, scroll-animated tattoo-themed portfolio site built with **Next.js 14**, **React 19**, **Tailwind CSS**, **GSAP**, and **Lenis** for buttery smooth animations.
 
@@ -21,7 +21,7 @@
 
 ---
 
-## 🧠 Features
+## Features
 
 -  Seamless navigation using **Lenis smooth scrolling**
 -  High-performance animations powered by **GSAP**
