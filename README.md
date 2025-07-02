@@ -28,7 +28,7 @@
 - 💅 Responsive design with **Tailwind CSS**
 - ⚛️ Built with **React 19 concurrent features**
 - ⚙️ SSR and SEO-friendly with **Next.js**
-- 📱 Fully responsive on mobile, tablet, and desktop
+- 📱 Fully animated and responsive on mobile, tablet, and desktop
 
 ---
 
