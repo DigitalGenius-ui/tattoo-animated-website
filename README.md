@@ -14,25 +14,25 @@
 
 ---
 
-## 🎨 Demo
+## Demo
 
 > Add your live link here:
-**[🌐 Live Preview](https://tattoo-animated-website.vercel.app/)**
+**[ Live Preview](https://tattoo-animated-website.vercel.app/)**
 
 ---
 
 ## 🧠 Features
 
-- ⚡ Seamless navigation using **Lenis smooth scrolling**
-- 🎞️ High-performance animations powered by **GSAP**
-- 💅 Responsive design with **Tailwind CSS**
-- ⚛️ Built with **React 19 concurrent features**
-- ⚙️ SSR and SEO-friendly with **Next.js**
-- 📱 Fully animated and responsive on mobile, tablet, and desktop
+-  Seamless navigation using **Lenis smooth scrolling**
+-  High-performance animations powered by **GSAP**
+-  Responsive design with **Tailwind CSS**
+-  Built with **React 19 concurrent features**
+-  SSR and SEO-friendly with **Next.js**
+-  Fully animated and responsive on mobile, tablet, and desktop
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Technology    | Description                     |
 |---------------|---------------------------------|
@@ -44,7 +44,7 @@
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the repo
 
